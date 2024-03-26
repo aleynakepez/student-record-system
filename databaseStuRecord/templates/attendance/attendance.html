@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+
+<div class="p-5">
+    <h2>Attendance</h2>
+    <p>You can add-update-delete Attendance</p>
+
+    <nav class="navbar bg-light">
+        <a href="/attendance/add_attendance" class="btn btn-primary">Add New Attendance</a>
+        
+    </nav>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Student Number</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Math Absent</th>
+            <th scope="col">Physics Absent</th>
+            <th scope="col">Biology Absent</th>
+            <th scope="col">History Absent</th>
+            <th scope="col">Sports Absent</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+            {% for student in students %}
+            <tr>
+                <td>{{ student.stu }}</td>
+                <td>{{ student.StuName }}</td>
+                <td>{{ student.math_absent }}</td>
+                <td>{{ student.physics_absent }}</td>
+                <td>{{ student.biology_absent }}</td>
+                <td>{{ student.history_absent }}</td>
+                <td>{{ student.sports_absent }}</td>
+                
+
+
+                <td><a href="/delete_attendance/{{ student.id }}" class="btn btn-outline-danger btn-sm"> Delete </a></td>
+
+                <td><a href="/edit_attendance/{{ student.id }}" class="btn btn-outline-success btn-sm"> Update </a></td>  
+
+            </tr>
+            {% endfor %}
+
+            
+        </tbody>
+      </table>
+</div>
+{% endblock main %}

@@ -1,0 +1,30 @@
+{% extends "layout.html"  %}
+
+{% block main %}
+
+{% from "formhelpers.html" import render_field %}
+
+<div class="p-5 h-100 w-100 d-flex align-items-center justify-content-center flex-column">
+
+    <h2>Edit Attendance</h2>
+    
+    <form method="post" class="w-50">
+
+        {{ render_field(form.student_number, class="form-control w-100") }}
+        {{ render_field(form.math_absent, class="form-control w-100") }}
+        {{ render_field(form.physics_absent, class="form-control w-100") }}
+        {{ render_field(form.biology_absent, class="form-control w-100") }}
+        {{ render_field(form.history_absent, class="form-control w-100") }}
+        {{ render_field(form.sports_absent, class="form-control w-100") }}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+    </form>
+
+    
+</div>
+
+{% endblock main %}
+
+

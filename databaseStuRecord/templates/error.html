@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div class="alert alert-danger w-50 m-auto" role="alert">
+    <p>An error occurred!</p>
+
+    <p>1) You might be adding or editing data to a student that does not exist. In this case, you must first register a new student from the "Student" page.</p>
+
+    <p>2) You may have misspelled the student number.</p>
+    
+    <p>3) Student namber must be unique.You can not add data twice for same student.</p>
+
+
+</div>
+
+{% endblock main %}

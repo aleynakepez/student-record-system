@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="p-5">
+    <h2>Student Info</h2>
+    <p>You can add-update-delete your students</p>
+
+    <nav class="navbar bg-light">
+        <a href="/stu_info/add_info" class="btn btn-primary">Add New Student Info</a>
+        
+    </nav>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Student Number</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Parent Name</th>
+            <th scope="col">Parent Phone</th>
+            <th scope="col">Student Mail</th>
+            <th scope="col">Student Gender</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+            {% for student in students %}
+            <tr>
+                <td>{{ student.stu }}</td>
+                <td>{{ student.StuName }}</td>
+                <td>{{ student.stugrade }}</td>
+                <td>{{ student.parentname }}</td>
+                <td>{{ student.parentphone }}</td>
+                <td>{{ student.stumail }}</td>
+                <td>{{ student.stugender }}</td>
+
+
+                <td><a href="/delete_info/{{ student.id }}" class="btn btn-outline-danger btn-sm"> Delete </a></td>
+
+                <td><a href="/edit_info/{{ student.id }}" class="btn btn-outline-success btn-sm"> Update </a></td>  
+
+            </tr>
+            {% endfor %}
+
+            
+        </tbody>
+      </table>
+</div>
+{% endblock main %}
